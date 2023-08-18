@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-	name: "Logger",
+	name: "swift-logger",
 	platforms: [
 		.iOS(.v13), .watchOS(.v6), .macOS(.v10_15), .tvOS(.v13)
 	],
