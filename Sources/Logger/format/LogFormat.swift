@@ -20,8 +20,9 @@ public struct LogFormat {
 	/// Default format with extensive format.
 	public static let `default`: LogFormat = LogFormat(arguments: [
 		.leftBracket, .date, .rightBracket,
-		.space(), .logLevelSymbol, .space(), .logLevel, .space(),
-		.leftParanthesis,
+		.space(), .logLevelSymbol,
+		.space(), .logLevel,
+		.space(), .leftParanthesis,
 		.fileName, .comma,
 		.space(), .functionName, .comma,
 		.space(), .text("line"),
@@ -53,6 +54,7 @@ public struct LogFormat {
 	) -> String {
 		let dateFormatter = DateFormatter()
 		dateFormatter .dateFormat = dateFormat
+		dateFormatter.locale = .init(identifier: "en")
 		return arguments.map { element -> String in
 			switch element {
 			case .date:
